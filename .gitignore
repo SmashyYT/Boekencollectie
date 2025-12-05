@@ -1,0 +1,13 @@
+# Python cache en compiled files
+__pycache__/
+*.py[cod]
+
+# Virtuele omgeving
+.venv/
+.env
+
+# Instellingen bestand (gevoelige data)
+config/settings.py
+
+# Database bestanden
+data/*.db
