@@ -44,7 +44,7 @@ def add_book_with_author(titel, auteur_naam):
     query="""
     INSERT INTO boeken (titel, auteur_id) VALUES (?, ?)
     """
-    cursor.execute(query, (titel, auteur_id))
+    cursor.execute(query, (titel.strip(), auteur_id))
     dbconnectie.commit()
     dbconnectie.close()
     
