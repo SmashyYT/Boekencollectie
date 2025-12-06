@@ -1,5 +1,7 @@
 from database import fetch_all_books, fetch_all_authors, add_book_with_author
 from utils.export import export_to_csv
+from models.boek import Boek
+from models.auteur import Auteur
 
 #menu tonen
 def show_menu():
@@ -19,15 +21,15 @@ def display_books():
         print("Er zitten nog geen boeken in de collectie.")
     else:
         #kolombreedtes voor mooie uitlijning
-        titel_width = max(len(boek[1]) for boek in boeken + [(0, "Titel", "Auteur")])
-        auteur_width = max(len(boek[2]) for boek in boeken + [(0, "Titel", "Auteur")])
+        titel_width = max(len(boek.titel) for boek in boeken + [Boek(0, "Titel", "Auteur")])
+        auteur_width = max(len(boek.auteur) for boek in boeken + [Boek(0, "Titel", "Auteur")])
         
         print(f"\n{'Titel'.ljust(titel_width)} | {'Auteur'.ljust(auteur_width)}")
         print("-" * (titel_width + auteur_width + 3))
         
         # data
         for boek in boeken:
-            print(f"{boek[1].ljust(titel_width)} | {boek[2].ljust(auteur_width)}")
+            print(f"{boek.titel.ljust(titel_width)} | {boek.auteur.ljust(auteur_width)}")
             
 #auteurs tonen
 def display_authors():
@@ -37,13 +39,13 @@ def display_authors():
         print("Er zijn nog geen auteurs te vinden.")
     else:
         #kolombreedtes voor mooie uitlijning
-        naam_width = max(len(auteur[1]) for auteur in auteurs + [(0, "Naam")])
+        naam_width = max(len(auteur.naam) for auteur in auteurs + [Auteur(0, "Naam")])
         
         print(f"\n{'Naam'.ljust(naam_width)}")
         print("-" * naam_width)
         
         for auteur in auteurs:
-            print(f"{auteur[1].ljust(naam_width)}")
+            print(f"{auteur.naam.ljust(naam_width)}")
             
 #boek toevoegen
 def add_book():
@@ -52,6 +54,7 @@ def add_book():
         
         if(titel == ""): 
             print("Titel mag niet leeg zijn, probeer opnieuw alstublieft.")
+        elif(titel)
         else:
             break
         

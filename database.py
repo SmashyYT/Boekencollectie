@@ -1,5 +1,7 @@
 import sqlite3
 from config.settings import DATABASE_PATH
+from models.boek import Boek
+from models.auteur import Auteur
 
 #connecteren met de database
 def get_connection():
@@ -17,7 +19,13 @@ def fetch_all_books():
     cursor.execute(query)
     results = cursor.fetchall()
     dbconnectie.close()
-    return results
+    
+    boeken = []
+    for row in results:
+        boek = Boek(row[0], row[1], row[2])
+        boeken.append(boek)
+        
+    return boeken
 
 #alle auteurs ophalen
 def fetch_all_authors():
@@ -30,7 +38,13 @@ def fetch_all_authors():
     cursor.execute(query)
     results = cursor.fetchall()
     dbconnectie.close()
-    return results
+    
+    auteurs = []
+    for row in results:
+        auteur = Auteur(row[0], row[1])
+        auteurs.append(auteur)
+        
+    return auteurs
 
 #toevoegen van boek -> als auteur nog niet bestaat in database, wordt die automatisch aangemaakt
 def add_book_with_author(titel, auteur_naam):

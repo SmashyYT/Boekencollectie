@@ -16,7 +16,7 @@ def export_to_csv(filenaam = "boekencollectie.csv"):
             writer.writerow(header)
             
             for boek in boeken:
-                writer.writerow(boek)
+                writer.writerow([boek.id, boek.titel, boek.auteur])
             
             print(f"Export succesvol! Bestand werd opgeslagen als '{filenaam}' en is terug te vinden in uw projectfolder.")
     except Exception as e:
