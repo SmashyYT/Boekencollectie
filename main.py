@@ -1,4 +1,5 @@
 from database import fetch_all_books, fetch_all_authors, add_book_with_author
+from utils.export import export_to_csv
 
 #menu tonen
 def show_menu():
@@ -6,7 +7,8 @@ def show_menu():
     print("1. Toon alle boeken")
     print("2. Voeg een boek toe")
     print("3. Toon alle auteurs")
-    print("4. Afsluiten")
+    print("4. Exporteer naar csv-bestand")
+    print("5. Afsluiten")
     
     
 #boeken tonen
@@ -63,11 +65,18 @@ def add_book():
             
     add_book_with_author(titel, auteur_naam)
     print(f"Het boek '{titel}' van {auteur_naam} werd toegevoegd aan de boekencollectie!")
+
+#csv-bestand aanmaken
+def get_csv_file():
+    filenaam = input("Geef bestandsnaam (of laat leeg voor standaard): ").strip()
+    if(filenaam == ""):
+        export_to_csv()
+    else:
+        if not filenaam.endswith(".csv"):
+            filenaam += ".csv"
+        export_to_csv(filenaam)
     
-    
-    
-    
-    
+
     
 #hoofdprogramma    
 def main():
@@ -82,6 +91,8 @@ def main():
         elif keuze == "3":
             display_authors()
         elif keuze == "4":
+            get_csv_file()
+        elif keuze == "5":
             print("Tot ziens!")
             break
         else:
