@@ -46,8 +46,11 @@ def fetch_all_authors():
         
     return auteurs
 
-#toevoegen van boek -> als auteur nog niet bestaat in database, wordt die automatisch aangemaakt
+#toevoegen van boek -> als auteur nog niet bestaat in database, wordt die automatisch aangemaakt. Als boek al bestaat, wordt het toevoegen overgeslagen.
 def add_book_with_author(titel, auteur_naam):
+    if book_exists(titel, auteur_naam):
+        print("Dit boek bestaat al — toevoegen overgeslagen.")
+        return
 
     #haal auteur id op, maak nieuwe aan als nodig
     auteur_id = get_or_create_author(auteur_naam.strip())
@@ -82,6 +85,24 @@ def get_or_create_author(naam):
 
     dbconnectie.close()
     return auteur_id
+
+#checken of boek al in database zit
+def book_exists(titel, auteur_naam):
+    dbconnectie = get_connection()
+    cursor = dbconnectie.cursor()
+
+    query = """
+    SELECT COUNT(*)
+    FROM boeken b
+    JOIN auteurs a ON b.auteur_id = a.id
+    WHERE LOWER(b.titel) = LOWER(?) AND LOWER(a.naam) = LOWER(?)
+    """
+
+    cursor.execute(query, (titel, auteur_naam))
+    result = cursor.fetchone()[0]
+
+    dbconnectie.close()
+    return result > 0
 
 
     

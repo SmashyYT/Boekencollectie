@@ -1,4 +1,4 @@
-from database import fetch_all_books, fetch_all_authors, add_book_with_author
+from database import fetch_all_books, fetch_all_authors, add_book_with_author, book_exists
 from utils.export import export_to_csv
 from models.boek import Boek
 from models.auteur import Auteur
@@ -54,7 +54,6 @@ def add_book():
         
         if(titel == ""): 
             print("Titel mag niet leeg zijn, probeer opnieuw alstublieft.")
-        elif(titel)
         else:
             break
         
