@@ -50,10 +50,11 @@ python3 main.py
 Dit bestand staat niet in de repository omdat het de database locatie bevat (gevoelige informatie).
 Er zit wel een voorbeeldbestand `settings_example.py` in de repository.
 
-De inhoud van settings.py moet zijn:
+Maak een `settings.py` bestand aan in de data map.
+De inhoud van `settings.py` moet zijn:
 
 ```python
-DATABASE_PATH = "data/<databasenaam>.db"
+DATABASE_PATH = "data/databasenaam.db"
 ```
 
 # Requirements

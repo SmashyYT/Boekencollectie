@@ -1,1 +1,1 @@
-DATABASE_PATH = "data/boekencollectie.db"
+DATABASE_PATH = "data/databasenaam.db"
