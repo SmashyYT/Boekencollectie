@@ -41,7 +41,7 @@ Er zit wel een voorbeeldbestand `settings_example.py` in de repository.
 De inhoud van settings.py moet zijn:
 
 ```python
-DATABASE_PATH = "data/boekencollectie.db"
+DATABASE_PATH = "data/<databasenaam>.db"
 ```
 
 # Requirements
