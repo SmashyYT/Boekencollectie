@@ -33,6 +33,20 @@ source .venv/bin/activate
 Er zijn geen externe packages nodig, dus voor deze stap hoef je niets te doen!
 De `requirements.txt` blijft leeg maar zit in de repository omdat dit best practice is.
 
+## 4. Position database
+
+Maak een de map data aan en plaats de meegegeven voorbeelddatabase hierin. De map kan je manueel aanmaken, of door de code hieronde uit te voeren in de terminal.
+
+*Windows*
+```
+mkdir data
+```
+
+*Linux, macOS*
+```
+mkdir -p data
+```
+
 ## 4. Setup settings file
 
 1. Maak een bestand `settings.py` aan in de `config` map. Dit kan je manueel doen, of door de code hieronder uit te voeren in de terminal.
@@ -51,7 +65,7 @@ touch config/settings.py
 
 Navigeer naar de de `config` map en open `settings.py`. 
 
-De inhoud (vervang <jouwdatabase> met de voorbeelddatabase):
+De inhoud (vervang met de voorbeelddatabase):
 
 ```python
 DATABASE_PATH = "data/<jouwdatabase>.db"
