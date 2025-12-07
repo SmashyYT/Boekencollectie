@@ -47,7 +47,7 @@ mkdir data
 mkdir -p data
 ```
 
-## 4. Setup settings file
+## 5. Setup settings file
 
 1. Maak een bestand `settings.py` aan in de `config` map. Dit kan je manueel doen, of door de code hieronder uit te voeren in de terminal.
 
@@ -73,7 +73,7 @@ DATABASE_PATH = "data/<jouwdatabase>.db"
 
 Je kan in het bestand `config\settings_voorbeeld.py` een voorbeeld bekijken.
 
-## 5. Run app
+## 6. Run app
 
 *Windows*
 ```
