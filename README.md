@@ -5,7 +5,7 @@ Je kan boeken toevoegen, gelezen boeken en auteurs bekijken en exporteren naar e
 Op deze manier kan je gemakkelijk bijhouden welke boeken je gelezen hebt. 
 
 # How to operate
-## 1. Clone de repository
+## 1. Clone the repository
 
 ```
 git clone <github-url>
@@ -35,14 +35,10 @@ De `requirements.txt` blijft leeg maar zit in de repository omdat dit best pract
 
 ## 4. Setup database
 
-In de repository ziten 2 databases (in de map `data`):
-1. Een voorbeelddatabase `boekencollectie_voorbeeld.db`
-=> Hierin zit voorbeelddata.
-=> Deze kan gebruikt worden om de functionaliteiten van de app te leren kennen.
+In de repository zitten 2 databases (in de map `data`):
+1. Een voorbeelddatabase `boekencollectie_voorbeeld.db`. Hierin zit voorbeelddata. Deze kan gebruikt worden om de functionaliteiten van de app te leren kennen.
 
-2. Een lege database `boekencollectie_leeg.db`
-=> Hierin zit geen data.
-=> Maak hier een kopie van als eigen werkdatabase
+2. Een lege database `boekencollectie_leeg.db`. Hierin zit geen data. Maak hier een kopie van als eigen werkdatabase.
 
 *Windows*
 ```
@@ -56,7 +52,19 @@ cp data/boekencollectie_leeg.db data/boekencollectie.db
 
 ## 5. Setup settings file
 
-Maak een bestand `settings.py` aan in de `config` map.
+1. Maak een bestand `settings.py` aan in de `config` map. Dit kan je manueel doen, of door de code hieronder uit te voeren in de terminal.
+
+*Windows*
+```
+type nul > config\settings.py
+```
+
+*Linux, macOS*
+```
+touch config/settings.py
+```
+
+2. Toevoegen inhoud 
 
 Als je het voorbeeldbestand gebruikt, is dit de inhoud:
 
