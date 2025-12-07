@@ -65,6 +65,8 @@ def add_book_with_author(titel, auteur_naam):
     dbconnectie.commit()
     dbconnectie.close()
     
+    return True
+    
     
 #auteur id ophalen of creëren als nog niet bestaat
 def get_or_create_author(naam):
