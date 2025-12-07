@@ -35,8 +35,14 @@ De `requirements.txt` blijft leeg maar zit in de repository omdat dit best pract
 
 ## 4. Run app
 
+*Windows*
 ```
 python main.py
+```
+
+*Linux, macOS*
+```
+python3 main.py
 ```
 
 # Settings file
