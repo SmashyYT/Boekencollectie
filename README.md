@@ -35,7 +35,7 @@ De `requirements.txt` blijft leeg maar zit in de repository omdat dit best pract
 
 ## 4. Position database
 
-Maak een de map data aan en plaats de meegegeven voorbeelddatabase hierin. De map kan je manueel aanmaken, of door de code hieronde uit te voeren in de terminal.
+Maak een de map data aan en plaats de meegegeven voorbeelddatabase hierin. De map kan je manueel aanmaken, of door de code hieronder uit te voeren in de terminal.
 
 *Windows*
 ```
