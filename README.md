@@ -33,7 +33,44 @@ source .venv/bin/activate
 Er zijn geen externe packages nodig, dus voor deze stap hoef je niets te doen!
 De `requirements.txt` blijft leeg maar zit in de repository omdat dit best practice is.
 
-## 4. Run app
+## 4. Setup database
+
+In de repository ziten 2 databases (in de map `data`):
+1. Een voorbeelddatabase `boekencollectie_voorbeeld.db`
+=> Hierin zit voorbeelddata.
+=> Deze kan gebruikt worden om de functionaliteiten van de app te leren kennen.
+
+2. Een lege database `boekencollectie_leeg.db`
+=> Hierin zit geen data.
+=> Maak hier een kopie van als eigen werkdatabase
+
+*Windows*
+```
+copy data\boekencollectie_leeg.db data\boekencollectie.db
+```
+
+*Linux, macOS*
+```
+cp data/boekencollectie_leeg.db data/boekencollectie.db
+```
+
+## 4. Setup settings file
+
+Maak een bestand `settings.py` aan in de `config` map.
+
+Als je het voorbeeldbestand gebruikt, is dit de inhoud:
+
+```python
+DATABASE_PATH = "data/boekencollectie_voorbeeld.db"
+```
+
+Als je je eigen werkbestand (dat in stap 4 werd aangemaakt) gebruikt, is dit de inhoud:
+
+```python
+DATABASE_PATH = "data/boekencollectie.db"
+```
+
+## 5. Run app
 
 *Windows*
 ```
@@ -43,18 +80,6 @@ python main.py
 *Linux, macOS*
 ```
 python3 main.py
-```
-
-# Settings file
-
-Dit bestand staat niet in de repository omdat het de database locatie bevat (gevoelige informatie).
-Er zit wel een voorbeeldbestand `settings_example.py` in de repository.
-
-Maak een `settings.py` bestand aan in de data map.
-De inhoud van `settings.py` moet zijn:
-
-```python
-DATABASE_PATH = "data/databasenaam.db"
 ```
 
 # Requirements
