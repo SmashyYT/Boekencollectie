@@ -33,24 +33,7 @@ source .venv/bin/activate
 Er zijn geen externe packages nodig, dus voor deze stap hoef je niets te doen!
 De `requirements.txt` blijft leeg maar zit in de repository omdat dit best practice is.
 
-## 4. Setup database
-
-In de repository zitten 2 databases (in de map `data`):
-1. Een voorbeelddatabase `boekencollectie_voorbeeld.db`. Hierin zit voorbeelddata. Deze kan gebruikt worden om de functionaliteiten van de app te leren kennen.
-
-2. Een lege database `boekencollectie_leeg.db`. Hierin zit geen data. Maak hier een kopie van als eigen werkdatabase.
-
-*Windows*
-```
-copy data\boekencollectie_leeg.db data\boekencollectie.db
-```
-
-*Linux, macOS*
-```
-cp data/boekencollectie_leeg.db data/boekencollectie.db
-```
-
-## 5. Setup settings file
+## 4. Setup settings file
 
 1. Maak een bestand `settings.py` aan in de `config` map. Dit kan je manueel doen, of door de code hieronder uit te voeren in de terminal.
 
@@ -64,21 +47,19 @@ type nul > config\settings.py
 touch config/settings.py
 ```
 
-2. Toevoegen inhoud 
+2. Toevoegen inhoud en database plaatsen
 
-Als je het voorbeeldbestand gebruikt, is dit de inhoud:
+Navigeer naar de de `config` map en open `settings.py`. 
 
-```python
-DATABASE_PATH = "data/boekencollectie_voorbeeld.db"
-```
-
-Als je je eigen werkbestand (dat in stap 4 werd aangemaakt) gebruikt, is dit de inhoud:
+De inhoud (vervang <jouwdatabase> met de voorbeelddatabase):
 
 ```python
-DATABASE_PATH = "data/boekencollectie.db"
+DATABASE_PATH = "data/<jouwdatabase>.db"
 ```
 
-## 6. Run app
+Je kan in het bestand `config\settings_voorbeeld.py` een voorbeeld bekijken.
+
+## 5. Run app
 
 *Windows*
 ```

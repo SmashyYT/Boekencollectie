@@ -11,7 +11,3 @@ config/settings.py
 
 # Database bestanden
 data/*.db
-
-# Lege en voorbeeld db uitgezonderd
-!data/boekencollectie_leeg.db  
-!data/boekencollectie_voorbeeld.db
