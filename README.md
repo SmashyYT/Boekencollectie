@@ -54,7 +54,7 @@ copy data\boekencollectie_leeg.db data\boekencollectie.db
 cp data/boekencollectie_leeg.db data/boekencollectie.db
 ```
 
-## 4. Setup settings file
+## 5. Setup settings file
 
 Maak een bestand `settings.py` aan in de `config` map.
 
@@ -70,7 +70,7 @@ Als je je eigen werkbestand (dat in stap 4 werd aangemaakt) gebruikt, is dit de 
 DATABASE_PATH = "data/boekencollectie.db"
 ```
 
-## 5. Run app
+## 6. Run app
 
 *Windows*
 ```
