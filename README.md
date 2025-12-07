@@ -9,7 +9,7 @@ Op deze manier kan je gemakkelijk bijhouden welke boeken je gelezen hebt.
 
 ```
 git clone <github-url>
-cd boekencollectie
+cd Boekencollectie
 ```
 
 ## 2. Use virtual environment (optional)
@@ -32,6 +32,12 @@ source .venv/bin/activate
 
 Er zijn geen externe packages nodig, dus voor deze stap hoef je niets te doen!
 De `requirements.txt` blijft leeg maar zit in de repository omdat dit best practice is.
+
+## 4. Run app
+
+```
+python main.py
+```
 
 # Settings file
 
