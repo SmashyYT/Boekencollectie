@@ -49,8 +49,8 @@ def fetch_all_authors():
 #toevoegen van boek -> als auteur nog niet bestaat in database, wordt die automatisch aangemaakt. Als boek al bestaat, wordt het toevoegen overgeslagen.
 def add_book_with_author(titel, auteur_naam):
     if book_exists(titel, auteur_naam):
-        print("Dit boek bestaat al — toevoegen overgeslagen.")
-        return
+        print(f"Het boek '{titel}' van {auteur_naam} zit al in de boekencollectie. Toevoegen wordt overgeslagen.")
+        return False
 
     #haal auteur id op, maak nieuwe aan als nodig
     auteur_id = get_or_create_author(auteur_naam.strip())

@@ -1,4 +1,4 @@
-from database import fetch_all_books, fetch_all_authors, add_book_with_author, book_exists
+from database import fetch_all_books, fetch_all_authors, add_book_with_author
 from utils.export import export_to_csv
 from models.boek import Boek
 from models.auteur import Auteur
@@ -65,8 +65,8 @@ def add_book():
         else:
             break
             
-    add_book_with_author(titel, auteur_naam)
-    print(f"Het boek '{titel}' van {auteur_naam} werd toegevoegd aan de boekencollectie!")
+    if add_book_with_author(titel, auteur_naam):
+        print(f"Het boek '{titel}' van {auteur_naam} werd toegevoegd aan de boekencollectie!")
 
 #csv-bestand aanmaken
 def get_csv_file():
